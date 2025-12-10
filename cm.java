@@ -38,6 +38,40 @@ public class cm {
     }
 
     static void tambahData(){
+        System.out.print("Nama Mahasiswa : ");
+        data[jumlahData][0] = input.nextLine();
+
+        System.out.print("NIM : ");
+        data[jumlahData][1] = input.nextLine();
+
+        System.out.print("Program Studi : ");
+        data[jumlahData][2] = input.nextLine();
+
+        System.out.print("Perusahaan Tujuan Magang : ");
+        data[jumlahData][3] = input.nextLine();
+
+        String semester;
+        while (true) {
+            System.out.print("Semester pengambilan magang (6 atau 7): ");
+            semester = input.nextLine();
+            if (semester.equals("6") || semester.equals("7")) break;
+            System.out.println("Input tidak valid! Semester hanya 6 atau 7.");
+        }
+        data[jumlahData][4] = semester;
+
+        String status;
+        while (true) {
+            System.out.print("Status magang (Diterima/Menunggu/Ditolak): ");
+            status = input.nextLine();
+            if (status.equalsIgnoreCase("Diterima") ||
+                status.equalsIgnoreCase("Menunggu") ||
+                status.equalsIgnoreCase("Ditolak")) break;
+            System.out.println("Status tidak valid!");
+        }
+        data[jumlahData][5] = status;
+
+        jumlahData++;
+        System.out.println("Data berhasil ditambahkan! Total pendaftar: " + jumlahData);
 
     }
 
