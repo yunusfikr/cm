@@ -37,7 +37,8 @@ public class cm {
         System.out.print("Pilih menu (1-5): ");
     }
 
-    static void tambahData(){
+    static void tambahData() {
+
         System.out.print("Nama Mahasiswa : ");
         data[jumlahData][0] = input.nextLine();
 
@@ -72,18 +73,48 @@ public class cm {
 
         jumlahData++;
         System.out.println("Data berhasil ditambahkan! Total pendaftar: " + jumlahData);
-
     }
 
-    static void tampilkanData(){
+    static void tampilkanData() {
+        if (jumlahData == 0) {
+            System.out.println("Belum ada pendaftar.");
+            return;
+        }
 
+        System.out.printf("%-4s %-35s %-15s %-20s %-20s %-25s %-10s\n",
+                        "No", "Nama", "NIM", "Prodi", "Perusahaan", "Semester", "Status");
+
+
+        for (int i = 0; i < jumlahData; i++) {
+            System.out.printf("%-4s %-35s %-15s %-20s %-20s %-25s %-10s\n",
+                    (i + 1), data[i][0],data[i][1], data[i][2], data[i][3], data[i][4], data[i][5]);
+        }
     }
 
-    static void cariProdi(){
+    static void cariProdi() {
+        System.out.print("Masukkan Program Studi: ");
+        String cari = input.nextLine();
 
+        boolean ditemukan = false;
+        System.out.println("\nHasil Pencarian: ");
+
+        for (int i = 0; i < jumlahData; i++) {
+            if (data[i][2].equalsIgnoreCase(cari)) {
+                ditemukan = true;
+                System.out.printf("%d. %s | %s | %s | %s | Semester %s | %s\n",
+                        (i + 1),
+                        data[i][0], data[i][1], data[i][2],
+                        data[i][3], data[i][4], data[i][5]);
+            }
+        }
+
+        if (!ditemukan) {
+            System.out.println("Tidak ditemukan pendaftar dengan prodi tersebut.");
+        }
     }
 
-    static void hitungStatus(){
-        
+    static void hitungStatus() {
+
+
     }
 }
