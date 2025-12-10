@@ -115,18 +115,6 @@ public class cm {
 
     static void hitungStatus() {
 
-            int diterima = 0, menunggu = 0, ditolak = 0;
-
-        for (int i = 0; i < jumlahData; i++) {
-            if (data[i][5].equalsIgnoreCase("Diterima")) diterima++;
-            else if (data[i][5].equalsIgnoreCase("Menunggu")) menunggu++;
-            else if (data[i][5].equalsIgnoreCase("Ditolak")) ditolak++;
-        }
-
-        System.out.println("Diterima : " + diterima);
-        System.out.println("Menunggu : " + menunggu);
-        System.out.println("Ditolak  : " + ditolak);
-        System.out.println("Total pendaftar : " + jumlahData);
 
     }
 }
